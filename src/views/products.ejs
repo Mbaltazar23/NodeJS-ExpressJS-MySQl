@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/_header')%>
+  <body>
+    <%- include('partials/_navbar')%>
+
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-md-7">
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>N°</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if (data) { %> <% for (var i = 0; i < data.length; i++) { %>
+              <tr>
+                <td><%= [i + 1] %></td>
+                <td><%= data[i].nombre %></td>
+                <td><%= data[i].precio %></td>
+                <td><%= data[i].stock %></td>
+                <td>
+                  <a href="/delete/<%=data[i].codigo %>" class="btn btn-danger"
+                    >Delete</a
+                  >
+                  &nbsp;<br />
+                  <a href="/update/<%= data[i].codigo %>" class="btn btn-info"
+                    >Update</a
+                  >
+                </td>
+              </tr>
+              <% } %> <% }%>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-5">
+          <div class="card">
+            <div class="card-body">
+              <form action="/add" method="post">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="nombre"
+                    placeholder="name"
+                    class="form-control"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="precio"
+                    placeholder="price"
+                    class="form-control"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="stock"
+                    placeholder="stock"
+                    class="form-control"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Save Product
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('partials/_footer')%>
+  </body>
+</html>
