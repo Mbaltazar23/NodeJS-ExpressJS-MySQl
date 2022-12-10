@@ -18,5 +18,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mbaltazar23/NodeJS-ExpressJS-MySQl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mbaltazar23/NodeJS-ExpressJS-MySQl/issues"
+  },
+  "homepage": "https://github.com/Mbaltazar23/NodeJS-ExpressJS-MySQl#readme"
 }
